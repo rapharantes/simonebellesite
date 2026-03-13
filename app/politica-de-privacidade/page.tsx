@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
@@ -14,6 +15,17 @@ export default function PoliticaPrivacidade() {
                     <ArrowLeft className="h-4 w-4" />
                     Voltar para Home
                 </Link>
+                <div className="flex justify-center mb-12">
+                    <div className="relative h-20 w-64">
+                        <Image
+                            src="/logo-simone.png"
+                            alt="Simone Belle Logo"
+                            fill
+                            className="object-contain"
+                            referrerPolicy="no-referrer"
+                        />
+                    </div>
+                </div>
 
                 <div className="bg-white p-10 md:p-16 rounded-[40px] shadow-sm border border-gold/10">
                     <h1 className="text-4xl md:text-5xl font-serif text-primary mb-10">Política de Privacidade</h1>
