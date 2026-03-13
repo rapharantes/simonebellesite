@@ -1,0 +1,7 @@
+{
+  "name": "Simone Belle - Terapia Transformadora",
+  "description": "Landing page moderna para a terapeuta Simone Belle, focada em Terapia de Reintegração Implícita (TRI) e bem-estar emocional.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

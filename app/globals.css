@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #141B4D;
+  --color-primary-deep: #171C8F;
+  --color-secondary: #F4F7F9;
+  --color-accent: #BC9E6E;
+  --color-silver: #A6A9AA;
+  --color-blue-royal: #004EA8;
+  --color-blue-medium: #4965A3;
+  --color-blue-sky: #5E93DB;
+  --color-blue-lavender: #8B96C2;
+  --color-whatsapp: #25D366;
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #141B4D 0%, #004EA8 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(20, 27, 77, 0.2);
+}
