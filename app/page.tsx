@@ -260,10 +260,10 @@ export default function LandingPage() {
       {/* Video & Stats */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div ref={videoRef} className="relative max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-2xl mb-20 bg-slate-900 aspect-video">
+          <div ref={videoRef} className="relative max-w-[360px] mx-auto rounded-[40px] overflow-hidden shadow-2xl mb-20 bg-slate-900 aspect-[9/16]">
             {isVideoVisible ? (
               <iframe
-                className="w-full h-full"
+                className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/IPJub2xLifE?autoplay=1&mute=1"
                 title="YouTube video player"
                 frameBorder="0"
@@ -271,7 +271,7 @@ export default function LandingPage() {
                 allowFullScreen
               ></iframe>
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-slate-100">
+              <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-100">
                 <div className="animate-pulse bg-slate-200 w-full h-full"></div>
               </div>
             )}
