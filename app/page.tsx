@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   MessageCircle,
@@ -21,7 +21,8 @@ import {
   ShieldCheck,
   Users,
   GraduationCap,
-  Heart
+  Heart,
+  Youtube
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -71,6 +72,24 @@ const GreenButton = ({ children, className = "", href = "#" }: { children: React
 
 export default function LandingPage() {
   const [showExitPopup, setShowExitPopup] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVideoVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
@@ -113,6 +132,9 @@ export default function LandingPage() {
               </a>
               <a href="https://www.facebook.com/simoneb.terapeuta/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                 <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://www.youtube.com/watch?v=IPJub2xLifE" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -238,20 +260,21 @@ export default function LandingPage() {
       {/* Video & Stats */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="relative max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-2xl mb-20 group cursor-pointer">
-            <Image
-              src="/Simone_consultorio.JPG"
-              alt="Simone no Consultório"
-              width={1200}
-              height={675}
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="h-20 w-20 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                <Play className="h-8 w-8 text-primary fill-primary ml-1" />
+          <div ref={videoRef} className="relative max-w-4xl mx-auto rounded-[40px] overflow-hidden shadow-2xl mb-20 bg-slate-900 aspect-video">
+            {isVideoVisible ? (
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/IPJub2xLifE?autoplay=1&mute=1"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-slate-100">
+                <div className="animate-pulse bg-slate-200 w-full h-full"></div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-2xl mx-auto text-center">
@@ -606,6 +629,9 @@ export default function LandingPage() {
                 </a>
                 <a href="https://www.facebook.com/simoneb.terapeuta/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                   <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://www.youtube.com/watch?v=IPJub2xLifE" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                  <Youtube className="h-5 w-5" />
                 </a>
                 <a href="#" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                   <Mail className="h-5 w-5" />
