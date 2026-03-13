@@ -111,7 +111,7 @@ export default function LandingPage() {
               <a href="https://www.instagram.com/simonebelle_/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="hover:text-gold transition-colors">
+              <a href="https://www.facebook.com/simoneb.terapeuta/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
@@ -604,7 +604,7 @@ export default function LandingPage() {
                 <a href="https://www.instagram.com/simonebelle_/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                <a href="https://www.facebook.com/simoneb.terapeuta/" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="#" className="h-10 w-10 rounded-full bg-beige/20 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
