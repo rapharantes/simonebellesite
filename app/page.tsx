@@ -438,7 +438,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-5xl mx-auto rounded-[60px] overflow-hidden shadow-2xl mb-24 border-8 border-beige/30">
             <Image
-              src="https://picsum.photos/seed/jornada/1200/600"
+              src="/Simone_consultorio.JPG"
               alt="Simone in chair"
               width={1200}
               height={600}
