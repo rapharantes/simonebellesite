@@ -642,7 +642,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-slate-100">
             <p className="text-slate-400 text-xs">© 2026 Simone Belle. Todos os direitos reservados.</p>
             <div className="flex gap-8 text-xs text-slate-400">
-              <a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a>
+              <a href="/politica-de-privacidade" className="hover:text-primary transition-colors">Política de Privacidade</a>
               <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
             </div>
             <button
