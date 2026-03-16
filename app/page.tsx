@@ -74,6 +74,7 @@ const GreenButton = ({ children, className = "", href = "#" }: { children: React
 export default function LandingPage() {
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const [instagramLoaded, setInstagramLoaded] = useState(false);
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -111,6 +112,17 @@ export default function LandingPage() {
 
     return () => document.removeEventListener('mouseleave', handleMouseOut);
   }, []);
+
+  // Effect to process Instagram embeds whenever they change or script loads
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).instgrm) {
+      // Small timeout to ensure DOM is ready
+      const timer = setTimeout(() => {
+        (window as any).instgrm.Embeds.process();
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [instagramLoaded]);
 
   return (
     <div className="relative overflow-x-hidden bg-white selection:bg-primary/10">
@@ -549,7 +561,11 @@ export default function LandingPage() {
             ` }} />
           </div>
         </div>
-        <Script src="https://www.instagram.com/embed.js" strategy="afterInteractive" />
+        <Script 
+          src="https://www.instagram.com/embed.js" 
+          strategy="afterInteractive" 
+          onLoad={() => setInstagramLoaded(true)}
+        />
       </section>
 
       {/* Sua jornada comigo */}
