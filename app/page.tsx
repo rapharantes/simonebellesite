@@ -305,16 +305,130 @@ export default function LandingPage() {
             Com a TRI, eu te ajudo a identificar os conflitos afetivos por trás da ansiedade, culpa e padrões repetidos — para destravar decisões e construir mudanças reais, com atendimento online ou presencial.
           </p>
 
-          {/* Triangle Diagram */}
-          <div className="relative max-w-2xl mx-auto mb-32">
-            <div className="relative aspect-square md:aspect-video flex items-center justify-center">
+          {/* Triangle Diagram & Comparisons */}
+          <div className="w-full max-w-6xl mx-auto mb-32">
+            {/* Triangle Diagram */}
+            <div className="flex items-center justify-center mb-16">
               <Image
                 src="/tri.svg"
                 alt="Terapia de Reintegração Implícita Diagrama"
-                width={800}
-                height={800}
+                width={600}
+                height={600}
                 className="w-full h-auto object-contain max-w-md drop-shadow-[0_10px_30px_rgba(0,49,97,0.15)]"
               />
+            </div>
+            
+            {/* Comparison Block */}
+            <div className="w-full max-w-[1200px] mx-auto overflow-hidden rounded-xl shadow-2xl flex flex-col md:flex-row">
+              
+              {/* Left Column: What T.R.I. is NOT */}
+              <div className="flex-1 bg-white p-8 md:p-12 lg:p-16 text-left border-b md:border-b-0 md:border-r border-slate-100">
+                <div className="mb-10">
+                  <h2 className="text-slate-900 text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                    O que a T.R.I. <span className="text-[#ef4444] italic">NÃO</span> é:
+                  </h2>
+                  <div className="h-1 w-20 bg-[#ef4444] mt-4 rounded-full"></div>
+                </div>
+                <ul className="space-y-8">
+                  <li className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <X className="text-[#ef4444]" size={28} strokeWidth={3} />
+                    </div>
+                    <div>
+                      <h3 className="text-slate-900 text-xl font-bold mb-1">Não é Terapia Convencional</h3>
+                      <p className="text-slate-600 text-base leading-relaxed">
+                        Processos que levam anos de sessões repetitivas sem apresentar resultados claros ou objetivos definidos.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <X className="text-[#ef4444]" size={28} strokeWidth={3} />
+                    </div>
+                    <div>
+                      <h3 className="text-slate-900 text-xl font-bold mb-1">Não é Pseudosciência</h3>
+                      <p className="text-slate-600 text-base leading-relaxed">
+                        Diferente de métodos sem fundamento, nossa abordagem é estritamente baseada em <span className="font-semibold text-slate-800">evidências e neurociência</span> moderna.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <X className="text-[#ef4444]" size={28} strokeWidth={3} />
+                    </div>
+                    <div>
+                      <h3 className="text-slate-900 text-xl font-bold mb-1">Não é um processo demorado</h3>
+                      <p className="text-slate-600 text-base leading-relaxed">
+                        Não focamos na análise infinita do passado, mas na resolução pragmática de padrões comportamentais atuais.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right Column: What T.R.I. IS */}
+              <div 
+                className="flex-1 p-8 md:p-12 lg:p-16 relative text-left bg-primary"
+                style={{ backgroundColor: '#141B4D' }}
+              >
+                {/* Background Subtle Texture */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+                <div className="relative z-10">
+                  <div className="mb-10">
+                    <h2 className="text-white text-3xl md:text-4xl font-black leading-tight tracking-tight">
+                      O que a T.R.I. <span className="text-white italic">É</span>:
+                    </h2>
+                    <div className="h-1 w-20 bg-white mt-4 rounded-full"></div>
+                  </div>
+                  <ul className="space-y-8 text-white">
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle2 className="text-white" size={28} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-white text-xl font-bold mb-1">Foco em <span className="text-white font-black underline decoration-2 underline-offset-4">95% dos Pacientes</span></h3>
+                        <p className="text-white/90 text-base leading-relaxed font-medium">
+                          Protocolo com alta taxa de eficácia comprovada, adaptável para a grande maioria das necessidades clínicas.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle2 className="text-white" size={28} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-white text-xl font-bold mb-1">Resultados em <span className="text-white font-black underline decoration-2 underline-offset-4">3 Sessões</span></h3>
+                        <p className="text-white/90 text-base leading-relaxed font-medium">
+                          Método otimizado para proporcionar alívio imediato e ferramentas de autogestão desde o primeiro contato.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle2 className="text-white" size={28} strokeWidth={2.5} />
+                      </div>
+                      <div>
+                        <h3 className="text-white text-xl font-bold mb-1">Abordagem Moderna e Ética</h3>
+                        <p className="text-white/90 text-base leading-relaxed font-medium">
+                          Transformação profunda através de técnicas de reprocessamento de alta performance.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="mt-12">
+                    <a
+                      href="https://wa.me/5546999072534?text=Olá, Simone! Tudo bem? Encontrei seu trabalho com a Terapia de Reintegração Implícita (TRI) e gostaria de agendar uma consulta de avaliação. Você pode me informar os horários disponíveis e os valores? Obrigado(a)!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5c] transition-all text-white font-bold py-4 px-8 rounded-xl group shadow-lg"
+                    >
+                      <MessageCircle className="h-5 w-5" />
+                      <span>Quero agendar minha avaliação</span>
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
