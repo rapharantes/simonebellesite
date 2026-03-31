@@ -13,7 +13,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Simone Belle | Terapia Transformadora',
+  title: 'Simone Bélle | Terapia Transformadora',
   description: 'Liberte-se da ansiedade e do pânico com a Terapia de Reintegração Implícita (TRI). Atendimento em Pato Branco e Online.',
   icons: {
     icon: '/favicon.png',
