@@ -13,8 +13,53 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Simone Bélle | Terapia Transformadora',
-  description: 'Liberte-se da ansiedade e do pânico com a Terapia de Reintegração Implícita (TRI). Atendimento em Pato Branco e Online.',
+  title: 'Simone Bélle | Terapeuta Especialista em TRI',
+  description: 'Liberte-se da ansiedade e do pânico com a Terapia de Reintegração Implícita (TRI). Atendimento focado e acolhedor em Pato Branco - PR e Online.',
+  keywords: [
+    'Terapia de Reintegração Implícita', 
+    'TRI', 
+    'Terapeuta Pato Branco', 
+    'Tratamento para ansiedade', 
+    'Autossabotagem', 
+    'Simone Bélle', 
+    'Terapia Online', 
+    'Neurociência', 
+    'Terapia Estratégica'
+  ],
+  authors: [{ name: 'Simone Bélle' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'Simone Bélle | Terapia Transformadora',
+    description: 'Liberte-se da ansiedade e do pânico com a Terapia de Reintegração Implícita (TRI). Atendimento em Pato Branco e Online.',
+    url: 'https://simonebelle.com.br',
+    siteName: 'Simone Bélle Terapias',
+    images: [
+      {
+        url: '/logo-simone.png',
+        width: 800,
+        height: 600,
+        alt: 'Logo Simone Bélle',
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Simone Bélle | Terapia Transformadora',
+    description: 'Liberte-se da ansiedade e do pânico com a Terapia de Reintegração Implícita (TRI).',
+    images: ['/logo-simone.png'],
+  },
   icons: {
     icon: '/favicon.png',
   },

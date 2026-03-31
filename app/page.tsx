@@ -73,25 +73,7 @@ const GreenButton = ({ children, className = "", href = "#" }: { children: React
 
 export default function LandingPage() {
   const [showExitPopup, setShowExitPopup] = useState(false);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [instagramLoaded, setInstagramLoaded] = useState(false);
-  const videoRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVideoVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
@@ -242,7 +224,7 @@ export default function LandingPage() {
       </section>
 
       {/* Sobre meu trabalho */}
-      <section id="sobre" className="py-24 bg-white relative overflow-hidden">
+      <section id="sobre" className="py-16 md:py-20 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-beige/20 to-transparent" />
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -290,21 +272,16 @@ export default function LandingPage() {
       {/* Video & Stats */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div ref={videoRef} className="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl mb-20 bg-slate-900 aspect-video">
-            {isVideoVisible ? (
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/IPJub2xLifE?autoplay=1&mute=1"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-slate-100">
-                <div className="animate-pulse bg-slate-200 w-full h-full"></div>
-              </div>
-            )}
+          <div className="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl mb-16 md:mb-20 bg-slate-900 aspect-video">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/IPJub2xLifE?autoplay=1&mute=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-2xl mx-auto text-center">
@@ -321,7 +298,7 @@ export default function LandingPage() {
       </section>
 
       {/* TRI Section */}
-      <section id="tri" className="py-24 bg-beige/20 overflow-hidden">
+      <section id="tri" className="py-16 md:py-20 bg-beige/20 overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="h-px w-6 bg-gold" />
@@ -490,7 +467,7 @@ export default function LandingPage() {
       </section>
 
       {/* Sobre Mim */}
-      <section className="py-24 bg-beige/10 relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-beige/10 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="order-2 md:order-1">
@@ -546,7 +523,7 @@ export default function LandingPage() {
       </section>
 
       {/* Depoimentos */}
-      <section className="py-24 bg-aqua/10">
+      <section className="py-16 md:py-20 bg-aqua/10">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-gold" />
@@ -575,7 +552,7 @@ export default function LandingPage() {
       </section>
 
       {/* Sua jornada comigo */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-5xl mx-auto rounded-[60px] overflow-hidden shadow-2xl mb-24 border-8 border-beige/30">
             <Image
@@ -619,7 +596,7 @@ export default function LandingPage() {
       </section>
 
       {/* Google Reviews */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
@@ -661,7 +638,7 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-beige/5">
+      <section className="py-16 md:py-20 bg-beige/5">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20">
             <div>
