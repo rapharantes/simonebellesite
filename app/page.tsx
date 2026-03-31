@@ -105,24 +105,35 @@ export default function LandingPage() {
     };
     document.addEventListener('mouseleave', handleMouseOut);
 
-    // Re-process Instagram embeds if the script is already loaded
-    if ((window as any).instgrm) {
-      (window as any).instgrm.Embeds.process();
-    }
-
     return () => document.removeEventListener('mouseleave', handleMouseOut);
   }, []);
 
-  // Effect to process Instagram embeds whenever they change or script loads
+  // Effect to load and process Instagram embeds
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).instgrm) {
-      // Small timeout to ensure DOM is ready
-      const timer = setTimeout(() => {
+    if (typeof window === 'undefined') return;
+
+    if ((window as any).instgrm) {
+      setTimeout(() => {
         (window as any).instgrm.Embeds.process();
       }, 500);
-      return () => clearTimeout(timer);
+      return;
     }
-  }, [instagramLoaded]);
+
+    const script = document.createElement('script');
+    script.src = 'https://www.instagram.com/embed.js';
+    script.async = true;
+    
+    script.onload = () => {
+      setInstagramLoaded(true);
+      setTimeout(() => {
+        if ((window as any).instgrm) {
+          (window as any).instgrm.Embeds.process();
+        }
+      }, 500);
+    };
+
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className="relative overflow-x-hidden bg-white selection:bg-primary/10">
@@ -561,11 +572,6 @@ export default function LandingPage() {
             ` }} />
           </div>
         </div>
-        <Script 
-          src="https://www.instagram.com/embed.js" 
-          strategy="afterInteractive" 
-          onLoad={() => setInstagramLoaded(true)}
-        />
       </section>
 
       {/* Sua jornada comigo */}
