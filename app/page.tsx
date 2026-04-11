@@ -74,6 +74,15 @@ const GreenButton = ({ children, className = "", href = "#" }: { children: React
 export default function LandingPage() {
   const [showExitPopup, setShowExitPopup] = useState(false);
   const [instagramLoaded, setInstagramLoaded] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
@@ -120,7 +129,7 @@ export default function LandingPage() {
   return (
     <div className="relative overflow-x-hidden bg-white selection:bg-primary/10">
       {/* Header */}
-      <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-gold/10">
+      <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-xl border-b border-gold/20 shadow-lg py-3' : 'bg-transparent py-5'}`}>
         <div className="container mx-auto flex items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
             <div className="relative h-14 w-56">
@@ -272,26 +281,53 @@ export default function LandingPage() {
       {/* Video & Stats */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl mb-16 md:mb-20 bg-slate-900 aspect-video">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/IPJub2xLifE?si=dI27vfH7brtBafze&start=31"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
+          <div className="relative w-full max-w-5xl mx-auto rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-16 md:mb-24 bg-slate-900 aspect-video ring-1 ring-white/10">
+            {hasMounted ? (
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/IPJub2xLifE?start=31"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
+                <div className="h-12 w-12 border-4 border-gold/30 border-t-gold rounded-full animate-spin" />
+              </div>
+            )}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 max-w-2xl mx-auto text-center">
-            <div className="border-r border-slate-100 last:border-0">
-              <div className="text-5xl md:text-6xl font-serif text-primary mb-2">8+</div>
-              <div className="text-slate-500 text-sm uppercase tracking-widest">Anos de experiência</div>
-            </div>
-            <div className="border-r border-slate-100 last:border-0">
-              <div className="text-5xl md:text-6xl font-serif text-primary mb-2">100%</div>
-              <div className="text-slate-500 text-sm uppercase tracking-widest">Foco em TRI</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-6 p-8 rounded-3xl bg-beige/10 border border-gold/10"
+            >
+              <div className="h-16 w-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gold">
+                <ShieldCheck className="h-8 w-8" />
+              </div>
+              <div className="text-left">
+                <div className="text-5xl font-serif text-primary mb-1">8+</div>
+                <div className="text-slate-500 text-xs uppercase tracking-widest font-bold">Anos de experiência</div>
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center gap-6 p-8 rounded-3xl bg-aqua/10 border border-primary/10"
+            >
+              <div className="h-16 w-16 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary">
+                <Brain className="h-8 w-8" />
+              </div>
+              <div className="text-left">
+                <div className="text-5xl font-serif text-primary mb-1">100%</div>
+                <div className="text-slate-500 text-xs uppercase tracking-widest font-bold">Foco em TRI</div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
