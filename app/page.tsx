@@ -281,21 +281,25 @@ export default function LandingPage() {
       {/* Video & Stats */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <div className="relative w-full max-w-5xl mx-auto rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-16 md:mb-24 bg-slate-900 aspect-video ring-1 ring-white/10">
-            {hasMounted ? (
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/IPJub2xLifE?start=31"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center bg-primary/5">
+          <div 
+            className="relative w-full max-w-5xl mx-auto rounded-[40px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-16 md:mb-24 bg-slate-900 ring-1 ring-white/10"
+            style={{ aspectRatio: '16/9' }}
+          >
+            {/* Fallback Background / Poster */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              {!hasMounted && (
                 <div className="h-12 w-12 border-4 border-gold/30 border-t-gold rounded-full animate-spin" />
-              </div>
-            )}
+              )}
+            </div>
+            
+            <iframe
+              className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${hasMounted ? 'opacity-100' : 'opacity-0'}`}
+              src={hasMounted ? "https://www.youtube.com/embed/IPJub2xLifE?start=31" : ""}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl mx-auto">
