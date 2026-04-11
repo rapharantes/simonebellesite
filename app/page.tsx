@@ -135,7 +135,7 @@ export default function LandingPage() {
             <div className="relative h-14 w-56">
               <Image
                 src="/logo-simone.png"
-                alt="Simone Bélle Logo"
+                alt="Simone Bellé Logo"
                 fill
                 className="object-contain"
                 referrerPolicy="no-referrer"
@@ -164,7 +164,7 @@ export default function LandingPage() {
             className="flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-bold text-white hover:bg-primary/90 transition-all shadow-md"
           >
             <MessageCircle className="h-4 w-4" />
-            Agendar agora
+            Agende uma consulta
           </a>
         </div>
       </header>
@@ -195,7 +195,7 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <GreenButton href="#contato">
-                Agendar consulta agora
+                Agende uma consulta
               </GreenButton>
             </div>
           </motion.div>
@@ -209,7 +209,7 @@ export default function LandingPage() {
             <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl border-8 border-white">
               <Image
                 src="/SimoneLivros.JPG"
-                alt="Simone Bélle"
+                alt="Simone Bellé"
                 width={800}
                 height={1000}
                 className="w-full h-auto object-cover"
@@ -252,7 +252,7 @@ export default function LandingPage() {
               <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Meu objetivo é abrir espaço para escolhas mais livres e coerentes com quem você é hoje, respeitando sua história e seu tempo.
               </p>
-              <GreenButton>Agendar consulta</GreenButton>
+              <GreenButton>Agende uma consulta</GreenButton>
             </motion.div>
             <div className="grid sm:grid-cols-2 gap-8">
               <div className="bg-beige/10 p-10 rounded-[40px] border border-gold/10 hover:border-gold/30 transition-colors">
@@ -501,7 +501,7 @@ export default function LandingPage() {
       <section className="py-16 bg-primary text-white text-center">
         <div className="container mx-auto px-6">
           <h3 className="text-2xl md:text-3xl font-serif mb-8">Quer saber se a TRI é para você? Agende sua avaliação</h3>
-          <GreenButton>Agendar consulta</GreenButton>
+          <GreenButton>Agende uma consulta</GreenButton>
         </div>
       </section>
 
@@ -514,7 +514,7 @@ export default function LandingPage() {
                 <div className="rounded-[60px] overflow-hidden shadow-2xl border-8 border-white relative z-10">
                   <Image
                     src="/Simone cadeira.JPG"
-                    alt="Simone Bélle with books"
+                    alt="Simone Bellé with books"
                     width={800}
                     height={1000}
                     className="w-full h-auto object-cover"
@@ -530,7 +530,7 @@ export default function LandingPage() {
                 <div className="h-px w-8 bg-gold" />
                 <span className="text-primary font-bold text-sm uppercase tracking-widest">Sobre Mim</span>
               </div>
-              <h2 className="text-4xl md:text-6xl font-serif text-primary mb-8 leading-tight">Terapeuta Simone Bélle</h2>
+              <h2 className="text-4xl md:text-6xl font-serif text-primary mb-8 leading-tight">Terapeuta Simone Bellé</h2>
               <p className="text-slate-700 text-lg mb-12 leading-relaxed">
                 Há <span className="text-primary font-bold">8 anos</span>, ajudo pessoas a destravarem a vida emocional com um olhar <span className="text-gold italic">afetivo, estratégico e humano</span>, com foco na Terapia de Reintegração Implícita (TRI).
               </p>
@@ -554,7 +554,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div className="mt-16">
-                <GreenButton>Agendar consulta agora</GreenButton>
+                <GreenButton>Agende uma consulta</GreenButton>
               </div>
             </div>
           </div>
@@ -629,7 +629,7 @@ export default function LandingPage() {
             ))}
           </div>
           <div className="mt-20">
-            <GreenButton>Agendar minha avaliação</GreenButton>
+            <GreenButton>Agende uma consulta</GreenButton>
           </div>
         </div>
       </section>
@@ -689,7 +689,7 @@ export default function LandingPage() {
               <p className="text-slate-600 text-lg mb-12 leading-relaxed">
                 Entendo que iniciar um processo terapêutico é um passo importante. Aqui estão as respostas para as perguntas mais comuns que recebo.
               </p>
-              <GreenButton className="hidden md:inline-flex">Agendar Uma Consulta</GreenButton>
+              <GreenButton className="hidden md:inline-flex">Agende uma consulta</GreenButton>
             </div>
             <div className="space-y-6">
               <div className="bg-primary p-10 rounded-[40px] text-white mb-10 shadow-2xl relative overflow-hidden group">
@@ -748,7 +748,7 @@ export default function LandingPage() {
               <div className="relative h-16 w-64 mb-8">
                 <Image
                   src="/logo-simone.png"
-                  alt="Simone Bélle Logo"
+                  alt="Simone Bellé Logo"
                   fill
                   className="object-contain"
                   referrerPolicy="no-referrer"
@@ -800,7 +800,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 pt-12 border-t border-slate-100">
-            <p className="text-slate-400 text-xs">© 2026 Simone Bélle. Todos os direitos reservados.</p>
+            <p className="text-slate-400 text-xs">© 2026 Simone Bellé. Todos os direitos reservados.</p>
             <div className="flex gap-8 text-xs text-slate-400">
               <a href="/politica-de-privacidade" className="hover:text-primary transition-colors">Política de Privacidade</a>
               <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
@@ -820,9 +820,12 @@ export default function LandingPage() {
         href="https://wa.me/5546999072534?text=Olá, Simone! Tudo bem? Encontrei seu trabalho com a Terapia de Reintegração Implícita (TRI) e gostaria de agendar uma consulta de avaliação. Você pode me informar os horários disponíveis e os valores? Obrigado(a)!"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 h-16 w-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300"
+        className="fixed bottom-8 right-8 z-50 group flex items-center gap-3 bg-[#25D366] text-white pl-6 pr-4 py-4 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 transition-all duration-300"
       >
-        <MessageCircle className="h-8 w-8" />
+        <span className="text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Agende uma consulta</span>
+        <div className="h-10 w-10 flex items-center justify-center">
+          <MessageCircle className="h-8 w-8" />
+        </div>
       </a>
 
       {/* Exit Intent Popup */}
@@ -854,7 +857,7 @@ export default function LandingPage() {
                 href="https://wa.me/5546999072534?text=Olá, Simone! Tudo bem? Encontrei seu trabalho com a Terapia de Reintegração Implícita (TRI) e gostaria de agendar uma consulta de avaliação. Você pode me informar os horários disponíveis e os valores? Obrigado(a)!"
                 className="block w-full bg-[#1db91d] py-5 rounded-full text-white font-bold mb-4 hover:bg-[#18a018] transition-colors"
               >
-                Quero meu Desconto
+                Agende uma consulta
               </a>
               <button
                 onClick={() => setShowExitPopup(false)}

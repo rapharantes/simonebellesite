@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
-    title: 'Política de Privacidade | Simone Bélle',
-    description: 'Política de Privacidade da Clínica de Terapia Simone Bélle.',
+    title: 'Política de Privacidade | Simone Bellé',
+    description: 'Política de Privacidade da Clínica de Terapia Simone Bellé.',
 };
 
 export default function PoliticaPrivacidade() {
@@ -19,7 +19,7 @@ export default function PoliticaPrivacidade() {
                     <div className="relative h-20 w-64">
                         <Image
                             src="/logo-simone.png"
-                            alt="Simone Bélle Logo"
+                            alt="Simone Bellé Logo"
                             fill
                             className="object-contain"
                             referrerPolicy="no-referrer"
@@ -41,7 +41,7 @@ export default function PoliticaPrivacidade() {
                         <div>
                             <h2 className="text-2xl font-bold text-primary mb-4 font-serif">1) Quem é a responsável pelos dados</h2>
                             <ul className="list-disc pl-5 space-y-2">
-                                <li><strong>Controladora:</strong> Terapeuta Simone Bélle</li>
+                                <li><strong>Controladora:</strong> Terapeuta Simone Bellé</li>
                                 <li><strong>Atendimento:</strong> online e presencial</li>
                                 <li><strong>Endereço:</strong> Rua Visconde de Tamandaré, nº 259, Bairro Santa Terezinha, Pato Branco/PR, CEP 85506-240</li>
                                 <li><strong>Contato (WhatsApp):</strong> (46) 99907-2534</li>
